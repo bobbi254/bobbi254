@@ -1,0 +1,35 @@
+# Set initial variables
+buy_amount = 1000.10
+runs = 10
+reference_nos = [250011752588, 250011695088, 250011628808, 250011568248, 250011505228, 250011437208, 250011363548, 250011282168, 250011209768, 250011134528]
+
+# Calculate the total stake
+total_stake = buy_amount * runs
+
+# Initialize the variables to track trades
+total_payout = 0
+profit_loss = 0
+balance = 0
+
+# Calculate the summary
+for reference_no in reference_nos:
+    # Add your logic here to get the trade details, such as trade type, buy price, contract closed, entry spot, exit spot, and profit / loss
+    trade_details = {
+        'trade_type': 'B', # B for Buy, S for Sell
+        'buy_price': buy_amount,
+        'contract_closed': reference_no % 2 == 0, # True if the contract is closed, False otherwise
+        'entry_spot': reference_no,
+        'exit_spot': reference_no + 100,
+        'profit_loss': (reference_no + 100) - reference_no
+    }
+
+    # Update the total payout, profit / loss, and balance
+    total_payout += trade_details['buy_price'] * trade_details['entry_spot']
+    profit_loss += trade_details['profit_loss']
+    balance = total_payout - profit_loss
+
+# Print the summary
+print(f"Total Stake: {total_stake}")
+print(f"Total Payout: {total_payout}")
+print(f"Profit / Loss: {profit_loss}")
+print(f"Balance: {balance}")

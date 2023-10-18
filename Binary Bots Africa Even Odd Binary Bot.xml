@@ -1,38 +1,88 @@
-# Set initial variables
-buy_amount = 1000.10
-runs = 10
-reference_nos = [250011752588, 250011695088, 250011628808, 250011568248, 250011505228, 250011437208, 250011363548, 250011282168, 250011209768, 250011134528]
-
-# Calculate the total stake
-total_stake = buy_amount * runs
-
-# Initialize the variables to track trades
-total_payout = 0
-profit_loss = 0
-balance = 0
-
-# Calculate the summary
-for reference_no in reference_nos:
-    # Add your logic here to get the trade details, such as trade type, buy price, contract closed, entry spot, exit spot, and profit / loss
-    trade_details = {
-        'trade_type': 'B', # B for Buy, S for Sell
-        'buy_price': buy_amount,
-        'contract_closed': reference_no % 2 == 0, # True if the contract is closed, False otherwise
-        'entry_spot': reference_no,
-        'exit_spot': reference_no + 100,
-        'profit_loss': (reference_no + 100) - reference_no
-    }
-
-    # Update the total payout, profit / loss, and balance
-    total_payout += trade_details['buy_price'] * trade_details['entry_spot']
-    profit_loss += trade_details['profit_loss']
-    balance = total_payout - profit_loss
+<Question ID="2" Shortcut="Q2" Order="" ElementType="question" QuestionType="closed" MinResponse="1" MaxResponse="0" Anonymity="1" AllowDK="1" Translated="0" >
+<LongCaption>Question ID="1" Shortcut="chapter 1" Order="" ElementType="chapter" >
+LongCaption># Set initial variables
+buy_amount = 10010<Modalities>
+<Modality ID="1">
+<ShortCaption>runs = 10</ShortCaption>
+</Modality>
+<Modality ID="2">
+<ShortCaption>reference_nos = [250011752588, 250011695088, 250011628808, 250011568248, 250011505228, 250011437208, 250011363548, 250011282168, 250011209768, 250011134528]</ShortCaption>
+</Modality>
+<Modality ID="3">
+<ShortCaption># Calculate the total stake</ShortCaption>
+</Modality>
+<Modality ID="4">
+<ShortCaption>total_stake = buy_amount * runs</ShortCaption>
+</Modality>
+<Modality ID="5">
+<ShortCaption># Initialize the variables to track trades</ShortCaption>
+</Modality>
+<Modality ID="6">
+<ShortCaption>total_payout = 0</ShortCaption>
+</Modality>
+<Modality ID="7">
+<ShortCaption>profit_loss = 0</ShortCaption>
+</Modality>
+<Modality ID="8">
+<ShortCaption>balance = 0</ShortCaption>
+</Modality>
+<Modality ID="9">
+<ShortCaption># Calculate the summary</ShortCaption>
+</Modality>
+<Modality ID="10">
+<ShortCaption>for reference_no in reference_nos:</ShortCaption>
+</Modality>
+<Modality ID="11">
+<ShortCaption># Add your logic here to get the trade details, such as trade type, buy price, contract closed, entry spot, exit spot, and profit / loss</ShortCaption>
+</Modality>
+<Modality ID="12">
+<ShortCaption>trade_details = {</ShortCaption>
+</Modality>
+<Modality ID="13">
+<ShortCaption>'trade_type': 'B', # B for Buy, S for Sell</ShortCaption>
+</Modality>
+<Modality ID="14">
+<ShortCaption>'buy_price': buy_amount,</ShortCaption>
+</Modality>
+<Modality ID="15">
+<ShortCaption>'contract_closed': reference_no % 2 == 0, # True if the contract is closed, False otherwise</ShortCaption>
+</Modality>
+<Modality ID="16">
+<ShortCaption>'entry_spot': reference_no,</ShortCaption>
+</Modality>
+<Modality ID="17">
+<ShortCaption>'exit_spot': reference_no + 100,</ShortCaption>
+</Modality>
+<Modality ID="18">
+<ShortCaption>'profit_loss': (reference_no + 100)  reference_no</ShortCaption>
+</Modality>
+<Modality ID="19">
+<ShortCaption>}</ShortCaption>
+</Modality>
+<Modality ID="20">
+<ShortCaption># Update the total payout, profit / loss, and balance</ShortCaption>
+</Modality>
+<Modality ID="21">
+<ShortCaption>total_payout += trade_details['buy_price'] * trade_details['entry_spot']</ShortCaption>
+</Modality>
+<Modality ID="22">
+<ShortCaption>profit_loss += trade_details['profit_loss']</ShortCaption>
+</Modality>
+<Modality ID="23">
+<ShortCaption>balance = total_payout  profit_loss</ShortCaption>
+</Modality>
+</Modalities>
 
 # Print the summary
 print(f"Total Stake: {total_stake}")
-print(f"Total Payout: {total_payout}")
+print
+Question></LongCaption>(f"Total Payout: {total_payout}")
 print(f"Profit / Loss: {profit_loss}")
-print(f"Balance: {balance}")
+print(f"Balance: {balance}")LongCaption>
+<Modalities>undefined<Routings>
+</Routings>
+</Question>
+
     <variable type="" id="^UotDwO-dLL5EPt6H-zL">STAKE LIST</variable>
     <variable type="" id="4pu$olWHHv+#[Q}D24NA">Trade Odd</variable>
     <variable type="" id="n5(f~qa.-7fAJ0/kZ%tM">SECONDS DELAY AFTER TRADE</variable>
